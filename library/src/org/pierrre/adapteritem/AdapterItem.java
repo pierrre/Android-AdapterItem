@@ -49,6 +49,11 @@ public abstract class AdapterItem {
 		return this.view;
 	}
 	
+	@SuppressWarnings("unchecked")
+	protected <T extends View> T findViewById(int id) {
+		return (T) this.view.findViewById(id);
+	}
+	
 	public void onViewMovedToScrapHeap() {
 		// Clean the item (async requests, etc..)
 	}
