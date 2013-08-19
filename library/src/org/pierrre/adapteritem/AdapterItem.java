@@ -3,6 +3,7 @@ package org.pierrre.adapteritem;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 public abstract class AdapterItem {
@@ -37,8 +38,8 @@ public abstract class AdapterItem {
 		this.view.setTag(R.id.adapter_item_view_tag, this);
 	}
 	
-	public AdapterItem(Context context, int layoutResId) {
-		this(context, LayoutInflater.from(context).inflate(layoutResId, null));
+	public AdapterItem(Context context, int layoutResId, ViewGroup parent) {
+		this(context, LayoutInflater.from(context).inflate(layoutResId, parent, false));
 	}
 	
 	public Context getContext() {
